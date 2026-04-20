@@ -29,6 +29,7 @@ module.exports = {
 				hostname: "placehold.co",
 			},
 		],
+		localPatterns: [{ pathname: "/api/proxy/**" }],
 		unoptimized: false,
 		dangerouslyAllowSVG: true,
 		// contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

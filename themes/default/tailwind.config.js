@@ -35,6 +35,10 @@ module.exports = {
 			colors: {
 				white: "rgb(var(--white) / <alpha-value>)",
 				black: "rgb(var(--black) / <alpha-value>)",
+				main: "#017CFE",
+				mainHover: "#2178FF",
+				button: "#08286A",
+				muted: "#9B9B9B",
 				primary: {
 					DEFAULT: "rgb(var(--primary) / <alpha-value>)",
 					25: "rgb(var(--primary-25) / <alpha-value>)",

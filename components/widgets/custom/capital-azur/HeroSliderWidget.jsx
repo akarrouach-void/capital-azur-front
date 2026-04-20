@@ -1,9 +1,7 @@
 import { useState, useEffect, useCallback } from "react"
-import { Image } from "@/ui"
+import { Image, Link } from "@/ui"
 
-export const config = {
-	id: "capital_azur_decoupled:hero_slider",
-}
+export const config = { id: "capital_azur_decoupled:hero_slider" }
 
 const HeroSliderWidget = ({ data }) => {
 	const items = data?.components || []
@@ -22,7 +20,7 @@ const HeroSliderWidget = ({ data }) => {
 	if (!count) return null
 
 	return (
-		<div className="relative w-full overflow-hidden">
+		<div className="relative w-full overflow-hidden ">
 			<div
 				className="flex transition-transform duration-700 ease-in-out"
 				style={{ transform: `translateX(-${current * 100}%)` }}
@@ -60,12 +58,12 @@ const HeroSliderWidget = ({ data }) => {
 												</p>
 											)}
 											{linkUrl && linkTitle && (
-												<a
+												<Link
 													href={linkUrl}
-													className="inline-block rounded bg-[#1c2e5e] px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-[#162348] md:px-8 md:py-3.5 md:text-base"
+													className="cursor-pointer text-blue-500 hover:text-blue-700"
 												>
 													{linkTitle}
-												</a>
+												</Link>
 											)}
 										</div>
 									</div>
@@ -88,28 +86,56 @@ const HeroSliderWidget = ({ data }) => {
 					)
 				})}
 			</div>
-
-			{/* Edge navigation arrows */}
 			{count > 1 && (
 				<>
 					<button
 						onClick={prev}
-						className="absolute left-0 top-1/2 z-20 flex h-10 w-8 -translate-y-1/2 items-center justify-center bg-white/80 text-primary-600 shadow transition hover:bg-white hover:text-primary-800"
+						className="absolute left-2 top-1/2 z-20 flex h-16 w-10 -translate-y-1/2 items-center justify-center text-[#2178FF] transition hover:text-[#1c2e5e] md:left-4"
 						aria-label="Précédent"
 					>
-						&#8249;
+						<svg
+							width="24"
+							height="44"
+							viewBox="0 0 24 44"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-10 w-6"
+							style={{ transform: "rotate(180deg)" }}
+						>
+							<path
+								d="M4.72378 4.00012L20 22.4813L4 40.0001"
+								stroke="currentColor"
+								strokeWidth="8"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+						</svg>
 					</button>
 					<button
 						onClick={next}
-						className="absolute right-0 top-1/2 z-20 flex h-10 w-8 -translate-y-1/2 items-center justify-center bg-white/80 text-primary-600 shadow transition hover:bg-white hover:text-primary-800"
+						className="absolute right-2 top-1/2 z-20 flex h-16 w-10 -translate-y-1/2 items-center justify-center text-[#2178FF] transition hover:text-[#1c2e5e] md:right-4"
 						aria-label="Suivant"
 					>
-						&#8250;
+						<svg
+							width="24"
+							height="44"
+							viewBox="0 0 24 44"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							className="h-10 w-6"
+						>
+							<path
+								d="M4.72378 4.00012L20 22.4813L4 40.0001"
+								stroke="currentColor"
+								strokeWidth="8"
+								strokeLinecap="round"
+								strokeLinejoin="round"
+							/>
+						</svg>
 					</button>
 				</>
 			)}
 
-			{/* Dot indicators */}
 			{count > 1 && (
 				<div className="absolute bottom-3 left-6 flex items-center gap-1.5 md:left-12">
 					{items.map((_, i) => (

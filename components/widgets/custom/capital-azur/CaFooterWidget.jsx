@@ -66,7 +66,7 @@ const CaFooterWidget = ({ data }) => {
 									href={item?.cta_social?.url || "#"}
 									target={item?.cta_social?.attributes?.target || "_self"}
 									aria-label={item?.cta_social?.title || item?.icon || ""}
-									className="text-primary-600 transition-colors hover:text-primary-800"
+									className="text-main transition-colors hover:text-primary-800"
 								>
 									<SocialIcon id={item?.icon || null} url={item?.cta_social?.url || ""} />
 								</Link>
@@ -88,7 +88,7 @@ const CaFooterWidget = ({ data }) => {
 									)}
 									<Link
 										href={item.url}
-										className="text-sm font-semibold uppercase tracking-wide text-gray-700 transition-colors hover:text-primary-600 hover:underline"
+										className="hover:text-main text-sm font-semibold uppercase tracking-wide text-gray-700 transition-colors hover:underline"
 									>
 										{item.title}
 									</Link>
@@ -102,11 +102,11 @@ const CaFooterWidget = ({ data }) => {
 			<div className="border-t border-gray-200" />
 
 			<div className="mx-auto flex max-w-[1400px] flex-col items-center justify-between gap-2 px-6 py-4 md:flex-row md:px-12">
-				<p className="text-sm text-primary-600">{copyrights}</p>
+				<p className="text-main text-sm">{copyrights}</p>
 
 				<div className="flex items-center gap-2">
 					<span className="text-xs text-gray-400">Conception et développement</span>
-					<span className="inline-flex items-center gap-1 rounded bg-primary-600 px-2 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
+					<span className="bg-main inline-flex items-center gap-1 rounded px-2 py-0.5 text-xs font-bold uppercase tracking-widest text-white">
 						Void
 						<span aria-hidden="true">&#9658;</span>
 					</span>

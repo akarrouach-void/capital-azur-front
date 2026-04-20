@@ -1,7 +1,7 @@
 import { useMemo, useState, useEffect } from "react"
 import { FlagBagProvider, useFlags } from "@vactory/console/client"
 import dynamic from "next/dynamic"
-import { Poppins, Cairo } from "next/font/google"
+import { Montserrat, Cairo } from "next/font/google"
 import {
 	usePageViewTracking,
 	useThemeObserver,
@@ -17,11 +17,11 @@ import {
 import { TourContextProvider } from "@vactorynext/core/context"
 import { toast } from "react-toastify"
 
-const poppins = Poppins({
+const montserrat = Montserrat({
 	weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
 	display: "swap",
 	subsets: ["latin"],
-	variable: "--font-poppins",
+	variable: "--font-montserrat",
 	preload: true,
 })
 
@@ -126,7 +126,7 @@ export default function App({ Component, pageProps }) {
 			) : (
 				<style jsx global>{`
 					:root {
-						--sans-font-family: ${poppins.style.fontFamily};
+						--sans-font-family: ${montserrat.style.fontFamily};
 					}
 				`}</style>
 			)}

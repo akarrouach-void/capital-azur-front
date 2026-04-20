@@ -15,11 +15,11 @@ const AboutUsWidget = ({ data }) => {
 		<div className="px-6 py-14">
 			<Container className="mx-auto flex max-w-5xl flex-col items-center text-center">
 				<div className="mb-10 flex flex-col items-center gap-6">
-					<span className="block h-[3px] w-16 shrink-0 bg-[#2b6df7]" />
+					<span className="bg-main block h-[3px] w-16 shrink-0" />
 					{title && (
 						<Heading
 							level={2}
-							className="text-3xl font-extrabold uppercase leading-tight tracking-wide text-[#0B1526] md:text-[42px]"
+							className="text-3xl font-extrabold uppercase leading-tight tracking-wide md:text-[42px]"
 						>
 							{title}
 						</Heading>
@@ -36,7 +36,7 @@ const AboutUsWidget = ({ data }) => {
 				{linkUrl && linkTitle && (
 					<a
 						href={linkUrl}
-						className="inline-block rounded bg-[#2b6df7] px-10 py-4 text-base font-bold uppercase tracking-widest text-white shadow-md transition hover:bg-blue-700"
+						className="bg-main inline-block rounded px-10 py-4 text-base font-bold uppercase tracking-widest text-white shadow-md transition hover:bg-blue-700"
 					>
 						{linkTitle}
 					</a>

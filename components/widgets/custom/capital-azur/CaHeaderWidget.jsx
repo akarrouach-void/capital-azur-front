@@ -2,11 +2,9 @@ import { useState } from "react"
 import { Image, Link, Icon } from "@/ui"
 import { usePathname } from "next/navigation"
 import { useMenu } from "@vactorynext/core/hooks"
+import { LangSwitch } from "../helpers/LangSwitch"
 
-export const config = {
-	id: "capital_azur_decoupled:ca-header",
-	lazy: false,
-}
+export const config = { id: "capital_azur_decoupled:ca-header", lazy: false }
 
 const CaHeaderWidget = ({ data }) => {
 	const path = usePathname()
@@ -20,14 +18,12 @@ const CaHeaderWidget = ({ data }) => {
 	const ctaUrl = extraFields?.cta?.url || null
 	const ctaTitle = extraFields?.cta?.title || null
 	const ctaIcon = extraFields?.cta?.attributes?.class || null
+	const showLangSwitch = extraFields?.show_language_switch ?? true
 
 	const navItems = useMenu("main")
 
-	console.log(navItems)
-
 	const isActive = (url) => {
 		if (!url || url === "#") return false
-
 		if (path === "/") return url === "/"
 		return url.includes(path) || path.includes(url)
 	}
@@ -46,7 +42,7 @@ const CaHeaderWidget = ({ data }) => {
 							className="h-12 w-auto object-contain"
 						/>
 					) : (
-						<span className="text-xl font-extrabold uppercase tracking-widest text-[#1c2e5e]">
+						<span className="text-button text-xl font-extrabold uppercase tracking-widest">
 							Capital Azur
 						</span>
 					)}
@@ -66,8 +62,8 @@ const CaHeaderWidget = ({ data }) => {
 									href={item.url}
 									className={
 										isActive(item.url)
-											? "px-3 py-2 text-sm font-semibold uppercase tracking-wide text-primary-600 transition-colors"
-											: "px-3 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 transition-colors hover:text-primary-600"
+											? "text-main px-3 py-2 text-sm font-semibold uppercase tracking-wide transition-colors"
+											: "hover:text-main px-3 py-2 text-sm font-semibold uppercase tracking-wide text-gray-700 transition-colors"
 									}
 								>
 									{item.title}
@@ -76,19 +72,19 @@ const CaHeaderWidget = ({ data }) => {
 						))}
 					</nav>
 
-					{/* CTA + mobile burger */}
 					<div className="flex items-center gap-4">
+						{showLangSwitch && <LangSwitch />}
+
 						{ctaUrl && ctaTitle && (
 							<Link
 								href={ctaUrl}
-								className="hidden items-center gap-2 rounded-md bg-[#1c2e5e] px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[#162348] md:inline-flex"
+								className="bg-button hidden items-center gap-2 rounded-md px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90 md:inline-flex"
 							>
 								{ctaTitle}
 								{ctaIcon && <Icon id={ctaIcon} className="h-4 w-4" />}
 							</Link>
 						)}
 
-						{/* Mobile burger */}
 						<button
 							className="flex flex-col gap-1.5 p-2 md:hidden"
 							onClick={() => setMobileOpen((o) => !o)}
@@ -112,8 +108,8 @@ const CaHeaderWidget = ({ data }) => {
 									href={item.url}
 									className={
 										isActive(item.url)
-											? "block text-sm font-semibold uppercase tracking-wider text-primary-600 transition-colors"
-											: "block text-sm font-semibold uppercase tracking-wider text-gray-700 transition-colors hover:text-primary-600"
+											? "text-main block text-sm font-semibold uppercase tracking-wider transition-colors"
+											: "hover:text-main block text-sm font-semibold uppercase tracking-wider text-gray-700 transition-colors"
 									}
 									onClick={() => setMobileOpen(false)}
 								>
@@ -125,7 +121,7 @@ const CaHeaderWidget = ({ data }) => {
 							<li>
 								<Link
 									href={ctaUrl}
-									className="mt-2 inline-flex items-center gap-2 rounded-md bg-[#1c2e5e] px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition hover:bg-[#162348]"
+									className="mt-2 inline-flex items-center gap-2 rounded-md bg-blue-600 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-white transition hover:opacity-90"
 								>
 									{ctaTitle}
 									{ctaIcon && <Icon id={ctaIcon} className="h-4 w-4" />}
