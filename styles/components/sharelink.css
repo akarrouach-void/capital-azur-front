@@ -1,0 +1,15 @@
+@layer components {
+	.sharelinks {
+		@apply flex flex-wrap items-center justify-center space-x-[30px] border-y py-3 px-[10px] md:px-0 md:justify-start;
+
+		&__title {
+			@apply text-[14px] font-bold text-black leading-none my-[10px];
+		}
+		&__items {
+			@apply flex flex-wrap items-center space-x-2;
+		}
+		&__link {
+			@apply inline-flex items-center justify-center transition-all duration-300 ease-in w-[26px] h-[26px] rounded border border-primary-500 bg-primary-500 text-white hover:bg-transparent hover:text-primary-500;
+		}
+	}
+}

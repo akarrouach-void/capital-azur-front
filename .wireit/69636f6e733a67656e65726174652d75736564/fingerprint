@@ -1,0 +1,1 @@
+{"fullyTracked":false,"platform":"darwin","arch":"arm64","nodeVersion":"v22.22.2","command":"node ../../scripts/generate-icon-types.js","extraArgs":[],"clean":false,"files":{},"output":[],"dependencies":{},"env":{}}

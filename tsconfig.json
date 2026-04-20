@@ -1,0 +1,19 @@
+{
+	"extends": "../../tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": ".",
+		"strict": true,
+		"jsxImportSource": "@vactorynext/core/jsx",
+		"paths": {
+			"@/runtime/*": [".runtime/*"],
+			"@/public/*": ["public/*"],
+			"@/storybook": [".storybook/index.js"],
+			"@/ui": ["components/elements/index.js"],
+			"@/components": ["components/index.js"],
+			"@/form": ["components/modules/contrib/webform/index.js"],
+			"@/account": ["components/modules/contrib/account/index.js"],
+			"@/comments": ["components/modules/contrib/comments/index.js"],
+			"@/themes/*": ["themes/*"],
+		}
+	}
+}

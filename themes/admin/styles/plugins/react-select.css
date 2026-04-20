@@ -1,0 +1,55 @@
+/* React Select */
+.react-select__control {
+	@apply !px-3 !border-gray-300 !h-[44px] !w-full !rounded-lg gap-2 !shadow-none !flex-nowrap overflow-hidden;
+}
+.react-select__control--is-focused {
+	@apply !border-primary-500;
+}
+
+.react-select__value-container {
+	@apply !p-0 !flex-nowrap !justify-between !pr-8 !gap-1;
+}
+
+.react-select__input-container {
+	@apply !-z-10 opacity-0 !flex-[0] !w-0 order-1;
+}
+
+.react-select__indicators {
+	@apply absolute -translate-y-1/2 top-1/2 right-3;
+}
+
+.react-select__indicator {
+	@apply !p-0 !text-gray cursor-pointer !w-4;
+}
+
+.react-select__indicator-separator {
+	@apply hidden;
+}
+
+.react-select__placeholder {
+	@apply !text-black text-sm !m-0;
+}
+
+.react-select__multi-value {
+	@apply !bg-primary-100;
+}
+
+.react-select__menu-list {
+	@apply !p-0;
+}
+
+.react-select__option {
+	@apply !text-sm;
+}
+
+.react-select__option--is-focused {
+	@apply max-md:!bg-none !bg-gray-500 bg-opacity-20;
+}
+
+.react-select__option--is-selected {
+	@apply !bg-primary-100 !text-primary-700;
+}
+
+.react-select__option--is-disabled {
+	@apply !bg-gray-500;
+}

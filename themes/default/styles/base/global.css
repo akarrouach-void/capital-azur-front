@@ -1,0 +1,9 @@
+@layer base {
+	body {
+		@apply bg-[rgb(var(--body-background))] text-black
+	}
+}
+
+[data-live-mode-id] {
+    border: 1px dotted red;
+}

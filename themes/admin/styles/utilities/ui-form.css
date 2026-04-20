@@ -1,0 +1,39 @@
+@layer utilities {
+	.ui-form__formControlLabel {
+		@apply block text-sm font-medium text-gray-700;
+	}
+
+	.ui-form__formField {
+		@apply block w-full rounded-md shadow-sm focus:outline-none sm:text-sm;
+
+		&.errored {
+			@apply text-red-900 placeholder-red-300 border-red-300 focus:ring-red-500 focus:border-red-500;
+		}
+
+		&:not(.errored) {
+			@apply border-gray-300 focus:ring-indigo-500 focus:border-indigo-500;
+		}
+	}
+
+	.ui-form__CheckboxField {
+		.ui-form__formField {
+			@apply w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500 ltr:mr-3 rtl:ml-3;
+		}
+
+		.ui-form__label {
+			@apply block text-sm font-medium text-gray-700 sm:mt-px sm:pt-2;
+		}
+	}
+
+	.ui-form__helperText {
+		@apply mt-2 text-sm text-gray-500;
+	}
+
+	.ui-form__errorMessage {
+		@apply mt-2 text-sm text-red-600;
+	}
+
+	.ui-form__formControlField {
+		@apply block w-full py-2 pl-3 mt-1 text-base rounded-md ltr:pr-10 rtl:pl-10 focus:outline-none sm:text-sm;
+	}
+}

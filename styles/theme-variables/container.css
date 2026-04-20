@@ -1,0 +1,32 @@
+@layer base {
+	:root {
+		--container-fluid-max-width: 100%;
+		--container-max-width: 100%;
+		--container-gutter: 20px;
+		--container-padding: 16px;
+	}
+
+	@media screen(lg) {
+		:root {
+			--container-max-width: 984px;
+			--container-gutter: 20px;
+			--container-padding: 0;
+		}
+	}
+
+	@media screen(xl) {
+		:root {
+			--container-max-width: 1240px;
+			--container-gutter: 20px;
+			--container-padding: 0;
+		}
+	}
+
+	@media screen(xxl) {
+		:root {
+			--container-max-width: 1300px;
+			--container-gutter: 20px;
+			--container-padding: 0;
+		}
+	}
+}

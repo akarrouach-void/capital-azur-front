@@ -1,0 +1,194 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./theme-variables/colors.css";
+@import "./theme-variables/typography.css";
+@import "./theme-variables/container.css";
+@import "./theme-variables/form.css";
+
+@import "../styles/preflight.css";
+@import "../components/modules/contrib/webform/webform-style.css";
+
+@layer base {
+	html[dir="rtl"] body {
+		@apply font-rtl;
+	}
+
+	.text-align-left {
+		@apply text-left;
+	}
+	.text-align-center {
+		@apply text-center;
+	}
+	.text-align-right {
+		@apply text-right;
+	}
+	.text-align-justify {
+		@apply text-justify;
+	}
+
+	.screen-disable__scroll {
+		@apply fixed h-screen overflow-hidden;
+	}
+
+	[dir="rtl"] .rtl-icon {
+		transform: rotateY(180deg);
+	}
+
+	.container .container {
+		@apply max-w-none px-0;
+	}
+
+	.container .container-fluid {
+		@apply px-0;
+	}
+
+	.container-fluid .container {
+		@apply px-0;
+	}
+
+	.animate {
+		@apply transition-all duration-300 ease-in-out;
+	}
+
+	.error-message {
+		@apply mt-1 text-left inline-block text-xs text-error-500;
+	}
+}
+
+@layer components {
+	.custom-list {
+		list-style: none;
+		padding-left: 20px;
+	}
+	.custom-list li {
+		position: relative;
+		padding-left: 34px;
+		margin-bottom: 8px;
+	}
+	.custom-list li::before {
+		content: "";
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		position: absolute;
+		left: 0;
+		top: 2px;
+		background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgaWQ9InRpY2stY2lyY2xlIj4KPHBhdGggaWQ9IlZlY3RvciIgZD0iTTEyIDIyQzE3LjUgMjIgMjIgMTcuNSAyMiAxMkMyMiA2LjUgMTcuNSAyIDEyIDJDNi41IDIgMiA2LjUgMiAxMkMyIDE3LjUgNi41IDIyIDEyIDIyWiIgc3Ryb2tlPSIjRkY1RTAwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+CjxwYXRoIGlkPSJWZWN0b3JfMiIgZD0iTTcuNzUgMTEuOTk5OUwxMC41OCAxNC44Mjk5TDE2LjI1IDkuMTY5OTIiIHN0cm9rZT0iI0ZGNUUwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L2c+Cjwvc3ZnPgo=);
+	}
+}
+
+input[type="range"].defaultInputRangeThumb::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 20px;
+	width: 10px;
+	border-radius: 5px;
+	background: #0077ff;
+	cursor: pointer;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}
+
+input[type="range"].roundedInputRangeThumb::-webkit-slider-thumb {
+	-webkit-appearance: none;
+	height: 20px;
+	width: 20px;
+	border-radius: 50%;
+	background: #0077ff;
+	cursor: pointer;
+	box-shadow: 0 0 2px 0 #555;
+	transition: background 0.3s ease-in-out;
+}
+
+.gm-style .gm-style-iw-c {
+	border-radius: 0;
+	border: 1px solid #0077ff;
+}
+.gm-style .gm-style-iw-tc {
+	filter: drop-shadow(0 1px 0 rgba(0, 119, 255, 1));
+}
+.gm-style .gm-style-iw-tc::before {
+	background: #0077ff;
+	clip-path: polygon(0% 0%, 50% 100%, 100% 0%);
+	content: "";
+	height: 12px;
+	left: 0;
+	position: absolute;
+	top: -1px;
+	width: 25px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+#nprogress .bar {
+	@apply bg-primary-200;
+}
+
+#nprogress .spinner {
+	@apply left-1/2 top-12 flex w-max -translate-x-1/2 items-center gap-3 rounded-lg bg-gray-25 px-5 py-3 text-sm text-gray-900 shadow-md rtl:translate-x-1/2;
+}
+
+/* React Select */
+.react-select__control {
+	@apply !h-[44px] !w-full !flex-nowrap gap-2 overflow-hidden !rounded-lg !border-gray-300 !px-3 !shadow-none;
+}
+.react-select__control--is-focused {
+	@apply !border-primary-500;
+}
+
+.react-select__value-container {
+	@apply !flex-nowrap !justify-between !gap-1 !p-0 !pr-8;
+}
+
+.react-select__input-container {
+	@apply !-z-10 order-1 !w-0 !flex-[0] opacity-0;
+}
+
+.react-select__indicators {
+	@apply absolute right-3 top-1/2 -translate-y-1/2;
+}
+
+.react-select__indicator {
+	@apply !w-4 cursor-pointer !p-0 !text-gray;
+}
+
+.react-select__indicator-separator {
+	@apply hidden;
+}
+
+.react-select__placeholder {
+	@apply !m-0 text-sm !text-black;
+}
+
+.react-select__multi-value {
+	@apply !bg-primary-100;
+}
+
+.react-select__menu-list {
+	@apply !p-0;
+}
+
+.react-select__option {
+	@apply !text-sm;
+}
+
+.react-select__option--is-focused {
+	@apply !bg-gray-500 bg-opacity-20 max-md:!bg-none;
+}
+
+.react-select__option--is-selected {
+	@apply !bg-primary-100 !text-primary-700;
+}
+
+.react-select__option--is-disabled {
+	@apply !bg-gray-500;
+}

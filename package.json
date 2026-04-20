@@ -1,0 +1,70 @@
+{
+  "name": "starter",
+  "version": "3.0.0",
+  "private": true,
+  "license": "MIT",
+  "wireit": {
+    "dev": {
+      "command": "rm -rf .next && node server-dev.js",
+      "service": true,
+      "dependencies": ["dev:admin-console", "dev:vactorynext-core", "icons:generate-used"]
+    },
+    "build": {
+      "command": "rm -rf .next && next build --webpack",
+      "dependencies": ["build:admin-console", "build:vactorynext-core", "icons:generate-used"]
+    },
+    "dev:admin-console": {
+      "command": "yarn workspace @vactory/console dev",
+      "service": {
+        "readyWhen": {
+          "lineMatches": "Watching for file changes"
+        }
+      }
+    },
+    "build:admin-console": {
+      "command": "yarn workspace @vactory/console build"
+    },
+    "dev:vactorynext-core": {
+      "command": "yarn workspace @vactorynext/core dev",
+      "service": {
+        "readyWhen": {
+          "lineMatches": "Watching for file changes"
+        }
+      }
+    },
+    "build:vactorynext-core": {
+      "command": "yarn workspace @vactorynext/core build"
+    },
+    "storybook:dev": {
+      "command": "storybook dev -p 6006",
+      "service": true,
+      "dependencies": ["dev:admin-console", "dev:vactorynext-core", "icons:generate-used"]
+    },
+    "storybook:build": {
+      "command": "storybook build",
+      "dependencies": ["build:admin-console", "build:vactorynext-core", "icons:generate-used"]
+    }
+  },
+  "scripts": {
+    "dev": "wireit",
+    "build": "wireit",
+    "start": "next start",
+    "analyze": "cross-env ANALYZE=true yarn build",
+    "preview": "rm -rf .next && next build && chmod +x ./preview.sh && ./preview.sh",
+    "serve": "serve .next/analyze",
+    "lint": "eslint .",
+    "icons:build": "npx --yes @vactorynext/svg-spreact-cli ./icons --optimize true --tidy true > ./public/icons.svg",
+    "icons:generate-used": "node ../../scripts/generate-icon-types.js",
+    "storybook:dev": "wireit",
+    "storybook:build": "wireit",
+    "redirection:build": "node ../../scripts/redirections/generate.js",
+    "format": "prettier --write \"{components,utils,lib,hooks,context,pages}/**/*.{js,jsx}\"",
+    "translate": "node -e \"const { generateTranslation } = require('@vactorynext/core/dist/utils/translation/generate-translation.js'); generateTranslation();\"",
+    "jest": "jest",
+    "playwright:test": "npx playwright test",
+    "playwright:show-report": "yarn playwright show-report"
+  },
+  "peerDependencies": {
+    "next": "*"
+  }
+}

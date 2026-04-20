@@ -1,0 +1,34 @@
+@layer base {
+	:root {
+		--input-label-color: #424242;
+		--input-border-color: #959595;
+		--input-placeholder-color: #959595;
+		--input-description-color: #959595;
+
+		--checkbox-label-color: #959595;
+		--checkbox-border-color: #424242;
+
+		--radio-label-color: #424242;
+		--radio-border-color: #424242;
+
+		--select-border-color: #959595;
+		--select-placeholder-color: #959595;
+	}
+
+	.dark,
+  [data-theme="dark"] {
+		--input-label-color: #FFFFFF;
+		--input-border-color: #959595;
+		--input-placeholder-color: #959595;
+		--input-description-color: #959595;
+
+		--checkbox-label-color: #FFFFFF;
+		--checkbox-border-color: #FFFFFF;
+
+		--radio-label-color: #FFFFFF;
+		--radio-border-color: #FFFFFF;
+
+		--select-border-color: #959595;
+		--select-placeholder-color: #959595;
+	}
+}

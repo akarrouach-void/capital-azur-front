@@ -1,0 +1,51 @@
+@layer base {
+	.h1,
+	.h2,
+	.h3,
+	.h4,
+	.h5,
+	.h6 {
+		font-weight: var(--heading-font-weight);
+		line-height: var(--heading-line-height);
+	}
+
+	.h1 {
+		font-size: var(--h1-font-size);
+	}
+
+	.h2 {
+		font-size: var(--h2-font-size);
+	}
+
+	.h3 {
+		font-size: var(--h3-font-size);
+	}
+
+	.h4 {
+		font-size: var(--h4-font-size);
+	}
+
+	.h5 {
+		font-size: var(--h5-font-size);
+	}
+
+	.h6 {
+		font-size: var(--h6-font-size);
+	}
+
+	.banner-title {
+		@apply text-white text-banner-title;
+	}
+
+	.paragraph-title {
+		@apply border-l-2 pl-[18px] border-red text-paragraph-title;
+
+		&--spacing {
+			@apply mb-5 sm:mb-6 lg:mb-[30px] xl:mb-8;
+		}
+	}
+
+	.prose {
+		@apply !max-w-none;
+	}
+}

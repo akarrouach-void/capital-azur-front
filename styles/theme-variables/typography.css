@@ -1,0 +1,39 @@
+@layer base {
+	:root {
+		--h1-font-size: 40px;
+		--h2-font-size: 32px;
+		--h3-font-size: 28px;
+		--h4-font-size: 24px;
+		--h5-font-size: 20px;
+		--h6-font-size: 18px;
+
+		--banner-title-font-size: 24px;
+		--paragraph-title-font-size: 18px;
+		--df-title-font-size: 18px;
+		--card-title-font-size: 16px;
+
+		--paragraph-font-size: 16px;
+		--df-description-font-size: 14px;
+		--caption-font-size: 14px;
+		--small-font-size: 12px;
+
+		--heading-line-height: 1.5;
+		--paragraph-title-line-height: 1.5;
+		--description-line-height: 1.5;
+		--df-description-line-height: 1.4;
+
+		--heading-font-weight: 700;
+		--paragraph-title-font-weight: 700;
+
+		--heading-letter-spacing: 0;
+		--paragraph-title-letter-spacing: 0;
+	}
+
+	@media screen(lg) {
+		:root {
+			--banner-title-font-size: 28px;
+			--paragraph-title-font-size: 24px;
+			--df-title-font-size: 24px;
+		}
+	}
+}

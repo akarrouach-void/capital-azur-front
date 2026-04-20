@@ -1,0 +1,293 @@
+{
+  "LAST_SYNCED_DATE": 1776427380401,
+  "flags": [
+    {
+      "name": "system__shield",
+      "fieldLabel": "Enable shield",
+      "value": false,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "shield",
+      "namespace": "system"
+    },
+    {
+      "name": "system__menus",
+      "fieldLabel": "Project menus (machine names seperated by comma)",
+      "value": "main,footer",
+      "isSecure": false,
+      "type": "string",
+      "group": "menus",
+      "namespace": "system"
+    },
+    {
+      "name": "system__shieldUsername",
+      "fieldLabel": "Username",
+      "value": "user",
+      "isSecure": true,
+      "type": "string",
+      "group": "shield",
+      "namespace": "system"
+    },
+    {
+      "name": "system__shieldPassword",
+      "fieldLabel": "Password",
+      "value": "password",
+      "isSecure": true,
+      "type": "string",
+      "group": "shield",
+      "namespace": "system"
+    },
+    {
+      "name": "system__shieldPaths",
+      "fieldLabel": "Paths",
+      "value": "",
+      "isSecure": true,
+      "type": "text",
+      "group": "shield",
+      "namespace": "system"
+    },
+    {
+      "name": "system__captcha",
+      "fieldLabel": "Enable captcha",
+      "value": true,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "captcha",
+      "namespace": "system"
+    },
+    {
+      "name": "system__captchaSiteKey",
+      "fieldLabel": "Site key",
+      "value": "6LdgArcsAAAAANla8ms9iBL0P8NZITc_wI-mqpTK",
+      "isSecure": false,
+      "type": "string",
+      "group": "captcha",
+      "namespace": "system"
+    },
+    {
+      "name": "system__language",
+      "fieldLabel": "Default language",
+      "value": "en",
+      "isSecure": false,
+      "type": "string",
+      "group": "language",
+      "namespace": "system"
+    },
+    {
+      "name": "system__switchLang",
+      "fieldLabel": "Enable switch language",
+      "value": true,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "language",
+      "namespace": "system"
+    },
+    {
+      "name": "system__maintenanceMode",
+      "fieldLabel": "Enable maintenance mode",
+      "value": false,
+      "isSecure": true,
+      "type": "boolean",
+      "group": "global",
+      "namespace": "system"
+    },
+    {
+      "name": "system__fetchErrors",
+      "fieldLabel": "Catch fetch errors",
+      "value": true,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "global",
+      "namespace": "system"
+    },
+    {
+      "name": "system__screenStats",
+      "fieldLabel": "Enable Screen Stats",
+      "value": true,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "global",
+      "namespace": "system"
+    },
+    {
+      "name": "system__enableOffline",
+      "fieldLabel": "Enable offline",
+      "value": false,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "Offline",
+      "namespace": "system"
+    },
+    {
+      "name": "system__showOfflineMessage",
+      "fieldLabel": "Show offline Message",
+      "value": false,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "Offline",
+      "namespace": "system"
+    },
+    {
+      "name": "system__offlineMessage",
+      "fieldLabel": "Offline message",
+      "value": "Maintenance en cours : Notre site est actuellement en mode de fonctionnement réduit en raison d'une panne de l'API. Nous travaillons pour restaurer toutes les fonctionnalités dès que possible. Veuillez nous excuser pour tout inconvénient.",
+      "isSecure": false,
+      "type": "text",
+      "group": "Offline",
+      "namespace": "system"
+    },
+    {
+      "name": "system__offlineManualOverride",
+      "fieldLabel": "Force Offline Mode (  Keep the site offline even when the backend is available)",
+      "value": false,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "Offline",
+      "namespace": "system"
+    },
+    {
+      "name": "system__scriptSrc",
+      "fieldLabel": "script-src",
+      "value": "cdn.onesignal.com www.gstatic.com www.google.com www.youtube.com maps.googleapis.com onesignal.com connect.facebook.net static.addtoany.com cdn.ampproject.org",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__styleSrc",
+      "fieldLabel": "style-src",
+      "value": "cdn.fonts.net",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__imgSrc",
+      "fieldLabel": "img-src",
+      "value": "localhost:8080 images.unsplash.com maps.gstatic.com maps.googleapis.com i.ytimg.com",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__fontSrc",
+      "fieldLabel": "font-src",
+      "value": "fonts.gstatic.com cdn.fonts.net",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__frameSrc",
+      "fieldLabel": "frame-src",
+      "value": "www.google.com www.youtube.com www.facebook.com",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__frameAncestors",
+      "fieldLabel": "frame-ancestors",
+      "value": "",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__connectSrc",
+      "fieldLabel": "connect-src",
+      "value": "maps.googleapis.com cdn.onesignal.com www.youtube.com",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__mediaSrc",
+      "fieldLabel": "media-src",
+      "value": "res.cloudinary.com",
+      "isSecure": false,
+      "type": "text",
+      "group": "Security",
+      "namespace": "system"
+    },
+    {
+      "name": "system__google-search-console-id",
+      "fieldLabel": "Google Search Console ID",
+      "value": "CERuG1IOQHTiHmLpbBl2wXm992wXYKEVwBQlZiSxS1o",
+      "isSecure": false,
+      "type": "string",
+      "group": "Google Search Console",
+      "namespace": "system"
+    },
+    {
+      "name": "system__enable_gtm",
+      "value": true,
+      "isSecure": false,
+      "fieldLabel": "Enable GTM",
+      "type": "boolean",
+      "group": "Google Tag Manager",
+      "namespace": "system"
+    },
+    {
+      "name": "system__gtm_id",
+      "value": "",
+      "isSecure": false,
+      "fieldLabel": "GTM ID",
+      "type": "string",
+      "group": "Google Tag Manager",
+      "namespace": "system"
+    },
+    {
+      "name": "system__enableNofollow",
+      "fieldLabel": "Enable nofollow for external links",
+      "value": true,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "SEO",
+      "namespace": "system"
+    },
+    {
+      "name": "system__nofollowWhitelist",
+      "fieldLabel": "Nofollow whitelist patterns (one per line, glob syntax)",
+      "value": "",
+      "isSecure": false,
+      "type": "text",
+      "group": "SEO",
+      "namespace": "system"
+    },
+    {
+      "name": "system__canonicalAllowedParams",
+      "fieldLabel": "Additional canonical query params (comma-separated). These will be added to the default params: page, sort",
+      "value": "",
+      "isSecure": false,
+      "type": "string",
+      "group": "canonical",
+      "namespace": "system"
+    },
+    {
+      "name": "system__allowedQueryParams",
+      "fieldLabel": "Allowed query params (comma-separated),If left empty, all query params will be allowed.",
+      "value": "sort,page",
+      "isSecure": false,
+      "type": "string",
+      "group": "Query Params",
+      "namespace": "system"
+    },
+    {
+      "name": "system__test",
+      "fieldLabel": "Allowed test.",
+      "value": false,
+      "isSecure": false,
+      "type": "boolean",
+      "group": "test",
+      "namespace": "system"
+    }
+  ]
+}

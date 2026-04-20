@@ -1,0 +1,30 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@import "./styles/theme-variables/colors.css";
+@import "./styles/theme-variables/typography.css";
+@import "./styles/theme-variables/container.css";
+@import "./styles/theme-variables/form.css";
+
+@import "./styles/base/global.css";
+@import "./styles/base/typography.css";
+
+@import "./styles/utilities/helpers.css";
+@import "./styles/utilities/input-tweaks.css";
+@import "./styles/utilities/listing.css";
+@import "./styles/utilities/screen-scroll.css";
+@import "./styles/utilities/ui-form.css";
+
+@import "./styles/plugins/google-maps.css";
+@import "./styles/plugins/nprogress.css";
+@import "./styles/plugins/react-select.css";
+
+@import "../../styles/components/sharelink.css";
+@import "../../styles/components/list.css";
+
+@import "../../components/modules/contrib/webform/webform-style.css";
+@import "../../components/widgets/contrib/sliders/slider-media-gallery/image-gallery.css";
+
+/* stylelint-disable-next-line at-rule-no-unknown */
+@config "./tailwind.config.js";

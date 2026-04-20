@@ -1,0 +1,65 @@
+body > div#__next {
+	@apply min-h-screen flex flex-col
+}
+
+html[dir="rtl"] body {
+	@apply font-rtl;
+}
+
+[dir="rtl"] .rtl-icon {
+	@apply rotate-180;
+}
+
+.text-align-left {
+  @apply text-left;
+}
+.text-align-center {
+  @apply text-center;
+}
+.text-align-right {
+  @apply text-right;
+}
+.text-align-justify {
+  @apply text-justify;
+}
+
+.container .container {
+	@apply px-0;
+}
+
+.container .container-fluid {
+	@apply px-0;
+}
+
+.container-fluid .container {
+	@apply px-0;
+}
+
+.no-mobile-container {
+	.container {
+		@apply max-md:!px-0;
+	}
+}
+
+.no-mobile-space-bottom {
+	@apply max-md:!pb-0;
+}
+
+.no-mobile-space-top {
+	@apply max-md:!pt-0;
+}
+
+[data-theme="dark"] [data-hide-on-theme="dark"],
+[data-theme="dark"] .dark-hidden,
+[data-theme="light"] [data-hide-on-theme="light"],
+[data-theme="light"] .light-hidden {
+	@apply !hidden;
+}
+
+.animate {
+	@apply transition-all duration-300 ease-in-out;
+}
+
+.error-message {
+	@apply text-left inline-block mt-1 text-xs text-red-500;
+}

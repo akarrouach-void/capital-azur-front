@@ -1,0 +1,17 @@
+.gm-style .gm-style-iw-c {
+	border-radius: 16px;
+	border: none;
+	box-shadow: 0px 4px 25px rgba(45, 49, 63, 0.5);
+
+	> button {
+		right: 0px !important;
+		top: 0px !important;
+	}
+}
+.gm-style .gm-style-iw-tc {
+	filter: drop-shadow(0px 4px 25px rgba(45, 49, 63, 0.5));
+}
+
+.gm-style .gm-style-iw-t {
+	bottom: 80px !important;
+}

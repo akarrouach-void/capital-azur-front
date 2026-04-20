@@ -1,0 +1,9 @@
+@layer utilities {
+	.disable-scroll {
+		@apply fixed top-0 left-0 right-0 overflow-y-hidden;
+	}
+
+	.screen-disable__scroll {
+		@apply fixed h-screen overflow-hidden;
+	}
+}
