@@ -12,7 +12,7 @@ module.exports = {
 		],
 	},
 	// List of menus used by frontend (useMenu hook). Must exists in Drupal.
-	menus: ["main", "footer"],
+	menus: ["main", "footer", "toolbox"],
 	images: {
 		contentSecurityPolicy: "script-src 'none'; frame-src 'none'; sandbox;",
 		disableStaticImages: false,

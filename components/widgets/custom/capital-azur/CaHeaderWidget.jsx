@@ -29,7 +29,7 @@ const CaHeaderWidget = ({ data }) => {
 	}
 
 	return (
-		<header className="w-full border-b-2 border-white bg-white shadow-sm">
+		<header className="border-muted/40 w-full border-b bg-white shadow-sm">
 			<div className="mx-auto flex h-[88px] max-w-[1400px] items-center justify-between px-6 md:px-12">
 				{/* Logo */}
 				<Link href="/" className="shrink-0">

@@ -51,6 +51,11 @@ export function Layout({ children, ...props }) {
 					runtimeWidgets={Widgets}
 					ContainerComponent={Container}
 				/>
+				<BlocksController
+					region="sidebar"
+					runtimeWidgets={Widgets}
+					ContainerComponent={Container}
+				/>
 				<main data-node-id={props?.node?.drupal_internal__nid} id="main-content">
 					{children}
 					<BlocksController

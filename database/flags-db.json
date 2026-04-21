@@ -13,7 +13,7 @@
     {
       "name": "system__menus",
       "fieldLabel": "Project menus (machine names seperated by comma)",
-      "value": "main,footer",
+      "value": "main,footer,toolbox",
       "isSecure": false,
       "type": "string",
       "group": "menus",
