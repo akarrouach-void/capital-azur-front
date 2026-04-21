@@ -1,4 +1,7 @@
 @layer base {
+	html {
+		scroll-behavior: smooth;
+	}
 	body {
 		@apply bg-[rgb(var(--body-background))] text-black
 	}
