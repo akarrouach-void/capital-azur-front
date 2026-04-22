@@ -54,12 +54,11 @@ const JobAdsNode = ({ node }) => {
 								<tbody>
 									<tr>
 										<td className="border-b border-gray-100 px-6 py-4 text-gray-700">
-											{node?.field_vactory_contract &&
-												node?.field_vactory_contract.map((el, i) => (
-													<Text as="span" key={i} className="font-medium">
-														{el.name}
-													</Text>
-												))}
+											{node?.field_vactory_contract?.name && (
+												<Text as="span" className="font-medium">
+													{node.field_vactory_contract.name}
+												</Text>
+											)}
 										</td>
 										<td className="border-b border-gray-100 px-6 py-4 font-medium text-gray-700">
 											{node?.field_vactory_profession?.name}

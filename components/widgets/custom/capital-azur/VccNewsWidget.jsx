@@ -54,7 +54,7 @@ const CrossContentNews = ({ data }) => {
 						<div>
 							{title && (
 								<div className="flex items-center gap-4">
-									<span className="bg-mainHover block h-[3px] w-12 shrink-0" />
+									<span className="block h-[3px] w-12 shrink-0 bg-mainHover" />
 									<Heading
 										level={2}
 										className="text-3xl font-extrabold uppercase leading-tight tracking-wide md:text-[38px]"
@@ -102,7 +102,7 @@ const CrossContentNews = ({ data }) => {
 							<div className="flex flex-1 flex-col p-8">
 								<div className="mb-4 flex items-center gap-3">
 									{item.category && (
-										<span className="bg-button inline-block rounded-full px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+										<span className="inline-block rounded-full bg-button px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
 											{item.category}
 										</span>
 									)}
@@ -112,10 +112,10 @@ const CrossContentNews = ({ data }) => {
 								</div>
 
 								{item.title && (
-									<h3 className="text-button mb-4 text-[20px] font-bold leading-snug">
+									<h3 className="mb-4 text-[20px] font-bold leading-snug text-button">
 										<Link
 											href={item.url}
-											className="hover:text-mainHover transition-colors"
+											className="transition-colors hover:text-mainHover"
 										>
 											{item.title}
 										</Link>
@@ -131,10 +131,10 @@ const CrossContentNews = ({ data }) => {
 								<div className="mt-auto">
 									<a
 										href={item.url}
-										className="text-mainHover group relative inline-block pb-1 text-sm font-extrabold uppercase tracking-widest transition hover:text-blue-800"
+										className="group relative inline-block pb-1 text-sm font-extrabold uppercase tracking-widest text-mainHover transition hover:text-blue-800"
 									>
 										Lire plus
-										<span className="bg-mainHover absolute bottom-0 left-0 h-[2px] w-full origin-left transform transition-transform group-hover:scale-x-110" />
+										<span className="absolute bottom-0 left-0 h-[2px] w-full origin-left transform bg-mainHover transition-transform group-hover:scale-x-110" />
 									</a>
 								</div>
 							</div>

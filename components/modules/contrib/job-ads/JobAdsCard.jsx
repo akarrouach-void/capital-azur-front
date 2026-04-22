@@ -18,7 +18,7 @@ export const JobAdsCard = ({ contract, className, url, title, description }) => 
 			>
 				{contract ? (
 					<div className="flex gap-2">
-						{contract.map((el, index) => (
+						{[].concat(contract).map((el, index) => (
 							<Badge text={el} className="mb-5" key={index} />
 						))}
 					</div>
