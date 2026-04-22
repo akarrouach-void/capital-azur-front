@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react"
+import { CookieComplianceFloated } from "../components/modules/contrib/cookie-compliance-floated/cookie-compliance-floated"
 import { FlagBagProvider, useFlags } from "@vactory/console/client"
 import dynamic from "next/dynamic"
 import { Montserrat, Cairo } from "next/font/google"
@@ -167,6 +168,15 @@ export default function App({ Component, pageProps }) {
 					>
 						<Component {...pageProps} />
 					</Layout>
+
+					{/* Cookie consent banner */}
+					<CookieComplianceFloated
+						body="We use cookies to improve your experience. By continuing, you agree to our cookie policy."
+						actionLabel="Accept All"
+						declineLabel="Decline"
+						cookieLifeTime={365}
+						privacyPolicy={{ href: "/en/privacy-policy", title: "Privacy Policy" }}
+					/>
 
 					{/* Additional functionality */}
 					<OneSignalPushNotificationInitializer />

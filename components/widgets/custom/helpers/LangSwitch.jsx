@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react"
-import { Icon, Link } from "@/ui"
+import { Icon } from "@/ui"
 import { useRouter } from "next/router"
 import { useNode } from "@vactorynext/core/hooks"
 import { getEnabledLanguages } from "@vactorynext/core/lib"
@@ -48,7 +48,7 @@ export const LangSwitch = () => {
 			{open && (
 				<div className="absolute right-0 top-full z-50 mt-1 w-28 overflow-hidden rounded-lg border border-gray-100 bg-white shadow-lg">
 					{others.map((lang) => (
-						<Link
+						<a
 							key={lang.code}
 							href={path_18n?.[lang.code] || `/${lang.code}`}
 							onClick={() => setOpen(false)}
@@ -64,7 +64,7 @@ export const LangSwitch = () => {
 							className="block px-4 py-2 text-xs font-bold uppercase transition"
 						>
 							{lang.label}
-						</Link>
+						</a>
 					))}
 				</div>
 			)}
