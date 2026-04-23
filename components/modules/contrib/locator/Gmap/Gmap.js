@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react"
+import { useEffect, useState, useRef } from "react"
 import {
 	GoogleMap,
 	useJsApiLoader,
@@ -12,21 +12,16 @@ import { useRouter } from "next/router"
 import { Icon, Link } from "@/ui"
 import { useI18n } from "@vactorynext/core/hooks"
 import { drupal } from "@vactorynext/core/drupal"
-import GMapSearchCategory from "./Gmap-category-filter"
-import GMapSearch from "./Gmap-search"
 import ClusterIcon from "./images/cluster.png"
 import { useNode } from "@vactorynext/core/hooks"
-import { set } from "react-hook-form"
 
-const Gmap = ({ categories, mapApikey, marker }) => {
+const Gmap = ({ mapApikey, marker }) => {
 	const [items, setItems] = useState([])
 	const node = useNode()
-	const [allItems, setAllItems] = useState([])
 	const [center, setCenter] = useState({ lat: 30.420431, lng: -9.560905 })
 	const [zoom, setZoom] = useState(6)
 	const [mapRef, setMapRef] = useState(null)
 	const [selectedId, setSelectedId] = useState(null)
-	const childRef = useRef(null)
 	const locatorRef = useRef(null)
 	const { t } = useI18n()
 	const router = useRouter()
@@ -34,7 +29,7 @@ const Gmap = ({ categories, mapApikey, marker }) => {
 
 	const containerStyle = {
 		width: "100%",
-		height: "800px",
+		height: "520px",
 		margin: "0 auto",
 	}
 
@@ -75,7 +70,6 @@ const Gmap = ({ categories, mapApikey, marker }) => {
 				setItems(data)
 			}
 
-			setAllItems(data)
 			setCenter({
 				lat: parseFloat(data[0].field_locator_info.lat),
 				lng: parseFloat(data[0].field_locator_info.lon),
@@ -116,38 +110,8 @@ const Gmap = ({ categories, mapApikey, marker }) => {
 		}
 	}
 
-	const filterByCategory = (id) => {
-		childRef.current.clearInputSearch()
-		setSelectedId(null)
-		mapRef.setZoom(3)
-		mapRef.setCenter(new window.google.maps.LatLng(30.420431, -9.560905))
-		if (id === "all") {
-			setItems(allItems)
-		} else {
-			const filresItems = allItems.filter(
-				(item) => item.relationships?.field_locator_category?.data?.id === id
-			)
-			setItems(filresItems)
-		}
-
-		// Scroll down to map on Category click
-		locatorRef.current.scrollIntoView({ behavior: "smooth" })
-	}
-
 	const loadHandler = (map) => {
 		setMapRef(map)
-	}
-
-	const getCurrentPosition = () => {
-		navigator.geolocation.getCurrentPosition(
-			(pos) => {
-				setCenter({ lat: pos.coords.latitude, lng: pos.coords.longitude })
-				setZoom(16)
-			},
-			(err) => {
-				console.warn(`ERROR(${err.code}): ${err.message}`)
-			}
-		)
 	}
 
 	const markerClusterOptions = {
@@ -163,78 +127,94 @@ const Gmap = ({ categories, mapApikey, marker }) => {
 		],
 	}
 	const mapCustomStyle = [
+		{ featureType: "all", elementType: "labels", stylers: [{ visibility: "off" }] },
+		{ featureType: "poi", elementType: "all", stylers: [{ visibility: "off" }] },
+		{ featureType: "transit", elementType: "all", stylers: [{ visibility: "off" }] },
 		{
-			featureType: "all",
-			elementType: "labels.text",
-			stylers: [
-				{
-					color: "#878787",
-				},
-			],
-		},
-		{
-			featureType: "all",
-			elementType: "labels.text.stroke",
-			stylers: [
-				{
-					visibility: "off",
-				},
-			],
+			featureType: "administrative",
+			elementType: "geometry",
+			stylers: [{ visibility: "off" }],
 		},
 		{
 			featureType: "landscape",
-			elementType: "all",
-			stylers: [
-				{
-					color: "#f9f5ed",
-				},
-			],
+			elementType: "geometry",
+			stylers: [{ color: "#f5f7fa" }],
+		},
+		{
+			featureType: "road",
+			elementType: "geometry.fill",
+			stylers: [{ color: "#ffffff" }],
+		},
+		{
+			featureType: "road",
+			elementType: "geometry.stroke",
+			stylers: [{ color: "#e8ecf2" }],
 		},
 		{
 			featureType: "road.highway",
-			elementType: "all",
-			stylers: [
-				{
-					color: "#f5f5f5",
-				},
-			],
+			elementType: "geometry.fill",
+			stylers: [{ color: "#ffffff" }],
 		},
 		{
 			featureType: "road.highway",
 			elementType: "geometry.stroke",
-			stylers: [
-				{
-					color: "#c9c9c9",
-				},
-			],
+			stylers: [{ color: "#e0e4ea" }],
 		},
 		{
 			featureType: "water",
-			elementType: "all",
-			stylers: [
-				{
-					color: "#aee0f4",
-				},
-			],
+			elementType: "geometry",
+			stylers: [{ color: "#eef2f7" }],
 		},
 	]
+
+	const mapOptions = {
+		disableDefaultUI: true,
+		zoomControl: false,
+		mapTypeControl: false,
+		streetViewControl: false,
+		fullscreenControl: false,
+		clickableIcons: false,
+		gestureHandling: "cooperative",
+		styles: mapCustomStyle,
+	}
 
 	if (!isClient()) {
 		return null
 	}
 
 	return isLoaded ? (
-		<>
-			<div className="relative flex flex-col-reverse md:pt-0">
-				<GMapSearch ref={childRef} markerHandler={markerHandler} items={items} />
+		<div className="grid grid-cols-1 items-center gap-10 px-6 md:grid-cols-2 md:pl-16">
+			<div className="flex flex-col gap-6">
+				<div className="flex items-start gap-4">
+					<span className="mt-5 block h-[2px] w-10 shrink-0 bg-primary" />
+					<h2 className="text-3xl font-extrabold uppercase leading-tight text-gray-900 md:text-4xl">
+						Accédez à nos services,
+						<br />
+						où que vous soyez.
+					</h2>
+				</div>
+				<p className="max-w-md text-[15px] leading-relaxed text-gray-600">
+					Nos services sont accessibles au niveau de 13 pays en Afrique, et bien plus dans
+					les prochains mois !
+				</p>
+				<div>
+					<Link
+						href="/notre-presence-en-afrique"
+						className="inline-block rounded border border-primary bg-white px-8 py-3 text-xs font-bold uppercase tracking-widest text-primary hover:bg-primary hover:text-white"
+					>
+						Notre présence en Afrique
+					</Link>
+				</div>
+			</div>
 
+			<div className="relative">
 				<div ref={locatorRef}>
 					<GoogleMap
 						mapContainerStyle={containerStyle}
 						center={center}
 						zoom={zoom}
 						onLoad={loadHandler}
-						styles={mapCustomStyle}
+						options={mapOptions}
 					>
 						<MarkerClusterer options={markerClusterOptions}>
 							{(clusterer) =>
@@ -312,21 +292,8 @@ const Gmap = ({ categories, mapApikey, marker }) => {
 						</MarkerClusterer>
 					</GoogleMap>
 				</div>
-
-				<div
-					className="absolute left-2 top-[282px] flex h-[40px] w-[40px] cursor-pointer items-center justify-center rounded-sm border border-solid border-white text-white md:left-auto md:right-[60px] md:top-[10px] md:h-[40px] md:w-[40px]"
-					onClick={() => getCurrentPosition()}
-					onKeyDown={(e) => {
-						e.key === "Enter" && getCurrentPosition()
-					}}
-					role="button"
-					tabIndex={0}
-				>
-					<Icon id="gps" className="h-6 w-6" />
-				</div>
-				<GMapSearchCategory filterByCategory={filterByCategory} categories={categories} />
 			</div>
-		</>
+		</div>
 	) : (
 		<></>
 	)
