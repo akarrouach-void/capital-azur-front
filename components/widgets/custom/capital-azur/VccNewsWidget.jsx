@@ -129,13 +129,13 @@ const CrossContentNews = ({ data }) => {
 								)}
 
 								<div className="mt-auto">
-									<a
+									<Link
 										href={item.url}
 										className="group relative inline-block pb-1 text-sm font-extrabold uppercase tracking-widest text-mainHover transition hover:text-blue-800"
 									>
 										Lire plus
 										<span className="absolute bottom-0 left-0 h-[2px] w-full origin-left transform bg-mainHover transition-transform group-hover:scale-x-110" />
-									</a>
+									</Link>
 								</div>
 							</div>
 						</div>

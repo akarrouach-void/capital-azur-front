@@ -49,11 +49,11 @@ const InsightsWidget = ({ data }) => {
 			<Container className="mx-auto max-w-6xl">
 				<div className="mb-16 flex flex-col items-center gap-5 text-center">
 					<div className="flex items-center gap-4">
-						<span className="block h-[3px] w-12 shrink-0 bg-[#2b6df7]" />
+						<span className="block h-[3px] w-12 shrink-0 bg-mainHover" />
 						{sectionTitle && (
 							<Heading
 								level={2}
-								className="text-3xl font-extrabold uppercase leading-tight tracking-wide text-[#0B1526] md:text-[38px]"
+								className="text-3xl font-extrabold uppercase leading-tight tracking-wide md:text-[38px]"
 							>
 								{sectionTitle}
 							</Heading>
@@ -88,23 +88,18 @@ const InsightsWidget = ({ data }) => {
 							<div className="flex flex-1 flex-col p-8">
 								<div className="mb-4 flex items-center gap-4">
 									{item.category && (
-										<span className="inline-block rounded-full bg-[#09224A] px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
+										<span className="inline-block rounded-full bg-button px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-white">
 											{item.category}
 										</span>
 									)}
 									{item.date && (
-										<span className="text-sm font-medium text-gray-400">
-											{item.date}
-										</span>
+										<span className="text-sm font-medium text-gray-400">{item.date}</span>
 									)}
 								</div>
 
 								{item.title && (
-									<h3 className="mb-8 text-[22px] font-bold leading-snug text-[#0B1526]">
-										<a
-											href={item.url}
-											className="transition-colors hover:text-[#2b6df7]"
-										>
+									<h3 className="mb-8 text-[22px] font-bold leading-snug">
+										<a href={item.url} className="transition-colors hover:text-mainHover">
 											{item.title}
 										</a>
 									</h3>
@@ -113,10 +108,10 @@ const InsightsWidget = ({ data }) => {
 								<div className="mt-auto">
 									<a
 										href={item.url}
-										className="group relative inline-block pb-1 text-sm font-extrabold uppercase tracking-widest text-[#2b6df7] transition hover:text-blue-800"
+										className="group relative inline-block pb-1 text-sm font-extrabold uppercase tracking-widest text-mainHover transition hover:text-blue-800"
 									>
 										LIRE PLUS
-										<span className="absolute bottom-0 left-0 h-[2px] w-full origin-left transform bg-[#2b6df7] transition-transform group-hover:scale-x-110" />
+										<span className="absolute bottom-0 left-0 h-[2px] w-full origin-left transform bg-mainHover transition-transform group-hover:scale-x-110" />
 									</a>
 								</div>
 							</div>
@@ -128,7 +123,7 @@ const InsightsWidget = ({ data }) => {
 					<div className="flex justify-center">
 						<a
 							href={globalLinkUrl}
-							className="inline-block rounded-lg border-2 border-[#2b6df7] bg-transparent px-10 py-3.5 text-sm font-bold uppercase tracking-widest text-[#2b6df7] transition-colors duration-300 hover:bg-[#2b6df7] hover:text-white"
+							className="inline-block rounded-lg border-2 border-mainHover bg-transparent px-10 py-3.5 text-sm font-bold uppercase tracking-widest text-mainHover transition-colors duration-300 hover:bg-mainHover hover:text-white"
 						>
 							{globalLinkTitle}
 						</a>

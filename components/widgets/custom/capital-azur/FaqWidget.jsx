@@ -19,10 +19,10 @@ const FaqWidget = ({ data }) => {
 			<Container className="mx-auto max-w-5xl">
 				{sectionTitle && (
 					<div className="mb-16 flex flex-col items-center gap-6 text-center">
-						<span className="block h-[3px] w-16 shrink-0 bg-[#2b6df7]" />
+						<span className="block h-[3px] w-16 shrink-0 bg-mainHover" />
 						<Heading
 							level={2}
-							className="text-3xl font-extrabold uppercase leading-tight tracking-wide text-[#0B1526] md:text-[42px]"
+							className="text-3xl font-extrabold uppercase leading-tight tracking-wide md:text-[42px]"
 						>
 							{sectionTitle}
 						</Heading>
@@ -57,14 +57,14 @@ const FaqWidget = ({ data }) => {
 								>
 									<span
 										className={`text-[19px] font-bold transition-colors duration-300 ${
-											isOpen ? "text-[#2b6df7]" : "text-[#0B1526]"
+											isOpen ? "text-mainHover" : null
 										}`}
 									>
 										{title}
 									</span>
 									<span
 										className={`text-3xl font-light leading-none ${
-											isOpen ? "text-[#2b6df7]" : "text-gray-400"
+											isOpen ? "text-mainHover" : "text-gray-400"
 										}`}
 									>
 										{isOpen ? "−" : "+"}
@@ -92,16 +92,16 @@ const FaqWidget = ({ data }) => {
 										<div className="flex flex-1 flex-col justify-center">
 											{description && (
 												<Wysiwyg
-													html={description["#text"] || description }
-													className="mb-10 text-[17px] font-medium leading-relaxed text-[#0B1526]"
+													html={description["#text"] || description}
+													className="mb-10 text-[17px] font-medium leading-relaxed "
 												/>
 											)}
 											{linkUrl && linkTitle && (
 												<div className="mt-auto flex items-center gap-3">
-													<span className="block h-[2px] w-8 shrink-0 bg-[#2b6df7]" />
+													<span className="block h-[2px] w-8 shrink-0 bg-mainHover" />
 													<a
 														href={linkUrl}
-														className="text-sm font-extrabold uppercase tracking-widest text-[#2b6df7] transition hover:text-blue-800"
+														className="text-sm font-extrabold uppercase tracking-widest text-mainHover transition hover:text-blue-800"
 													>
 														{linkTitle}
 													</a>

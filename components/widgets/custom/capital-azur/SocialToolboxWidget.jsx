@@ -1,4 +1,4 @@
-import { Icon } from "@/ui"
+import { Icon, Link } from "@/ui"
 import { useMenu } from "@vactorynext/core/hooks"
 
 export const config = {
@@ -12,7 +12,7 @@ const SocialToolboxWidget = () => {
 
 	return (
 		<div className="fixed left-0 top-1/2 z-50 hidden -translate-y-1/2 lg:block">
-			<ul className="bg-main flex flex-col items-center gap-0 overflow-hidden rounded-r-2xl py-2">
+			<ul className="flex flex-col items-center gap-0 overflow-hidden rounded-r-2xl bg-main py-2">
 				{items.map((item) => {
 					const icon = item?.options?.icon || item?.title?.toLowerCase() || ""
 					const url = item?.url || "#"
@@ -21,7 +21,7 @@ const SocialToolboxWidget = () => {
 
 					return (
 						<li key={item.id}>
-							<a
+							<Link
 								href={url}
 								title={title}
 								target={attributes?.target || "_blank"}
@@ -33,7 +33,7 @@ const SocialToolboxWidget = () => {
 								) : (
 									<span className="text-xs font-bold uppercase">{title.slice(0, 2)}</span>
 								)}
-							</a>
+							</Link>
 						</li>
 					)
 				})}
