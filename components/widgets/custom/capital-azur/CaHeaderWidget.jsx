@@ -3,12 +3,14 @@ import { Image, Link, Icon } from "@/ui"
 import { usePathname } from "next/navigation"
 import { useMenu } from "@vactorynext/core/hooks"
 import { LangSwitch } from "../helpers/LangSwitch"
+import { SearchOverlayV2 } from "../../../elements/search-overlay/SearchOverlayV2"
 
 export const config = { id: "capital_azur_decoupled:ca-header", lazy: false }
 
 const CaHeaderWidget = ({ data }) => {
 	const path = usePathname()
 	const [mobileOpen, setMobileOpen] = useState(false)
+	const [searchOpen, setSearchOpen] = useState(false)
 
 	const extraFields = data?.extra_field || {}
 	const logoSrc = extraFields?.logo?.[0]?._default || null
@@ -75,6 +77,14 @@ const CaHeaderWidget = ({ data }) => {
 					<div className="flex items-center gap-4">
 						{showLangSwitch && <LangSwitch />}
 
+						<button
+							onClick={() => setSearchOpen(true)}
+							aria-label="Search"
+							className="text-gray-600 transition hover:text-blue-600"
+						>
+							<Icon id="search" className="h-5 w-5" />
+						</button>
+
 						{ctaUrl && ctaTitle && (
 							<Link
 								href={ctaUrl}
@@ -131,6 +141,7 @@ const CaHeaderWidget = ({ data }) => {
 					</ul>
 				</nav>
 			)}
+		<SearchOverlayV2 show={searchOpen} onClose={() => setSearchOpen(false)} />
 		</header>
 	)
 }
